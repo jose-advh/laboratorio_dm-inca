@@ -1,0 +1,180 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.ocultar {
+    display: none !important;
+}
+
+body{
+    background-color: #F5F5F5;
+}
+
+.header {
+
+}
+
+.header--main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.header__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.header__title {
+    text-align: center;
+}
+
+.header__logo {
+    width: 100px;
+}
+
+.header__list {
+    display: flex;
+    gap: 15px;
+}
+
+.main__card {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 35%;
+    gap: 25px;
+    padding: 1rem;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
+                0 1px 3px rgba(0, 0, 0, 0.08); 
+    border-radius: 15px;
+}
+
+.main__card--width {
+    width: 70% !important;
+}
+
+.main__card--prestamos {
+    width: 65% !important;
+}
+
+.prestamos__content {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form__group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.form__group--column  {
+    flex-direction: column;
+}
+
+.form__input {
+    width: 90%;
+    height: 2.5rem;
+    border-radius: 5px;
+    border: none;
+    transition: .5s all;
+    background-color: rgb(245, 241, 241);
+}
+
+.form__input--select {
+    margin: auto;
+}
+
+.form__input::placeholder {
+    padding: .4rem;
+}
+
+.form__input:focus {
+    padding: .5rem;
+}
+
+.form__button {
+    margin: auto;
+    width: 50%;
+    height: 2.5rem;
+    cursor: pointer;
+    color: white;
+    font-size: 1.1rem;
+    background-color: blue;
+    border-radius: 15px;
+    border: none;
+    transition: .5s all;
+}
+
+.card__button {
+    margin: auto;
+    width: 100%;
+    height: 2.5rem;
+    cursor: pointer;
+    color: white;
+    font-size: 1.1rem;
+    background-color: blue;
+    border-radius: 15px;
+    border: none;
+    transition: .5s all;
+}
+
+.card__button--block {
+    background-color: gray !important;
+}
+
+.form__button:hover, .card__button:hover {
+    background-color: rgb(75, 75, 255);
+}
+
+@media (max-width: 900px) {
+
+    .header {
+    }
+
+    .main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .main__auth {
+        width: 80%;
+    }
+
+    .prestamos__content {
+        flex-direction: column;
+    }
+
+    .main__card {
+        width: 80%;
+    }
+
+    .main__card--width {
+        width: 85% !important;
+    }
+
+    .main__card--prestamos {
+        width: 90% !important;
+    }
+}

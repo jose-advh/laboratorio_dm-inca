@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contabilidad y Más</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="header__nav">
+            <img src="imgs/logo_empresa.png" class="header__logo" alt="Logo de la empresa Contabilidad y Más">
+            <ul class="header__list">
+                <li><a href="#" class="header__item" id="userName">$1.000</a></li>
+                <li><a href="#" class="header__item" id="userSaldo">CONFIG</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main">
+        <article class="main__card" id="main__auth">
+            <section class="header--main">
+                <h2 class="header__title">Contabilidad y Más</h2>
+                <p class="header__description">
+                    Hey, antes de iniciar necesitamos saber un poco más de ti :)
+                </p>
+            </section>
+            <section class="auth__content">
+                <form class="form" id="fromUser">
+                    <article class="form__group">
+                        <img src="imgs/icons/person_13924070.png" alt="">
+                        <input type="text" class="form__input" placeholder="Nombre" id="nombreUsuario">
+                    </article>
+                    <article class="form__group">
+                        <img src="imgs/icons/money_13930270.png" alt="">
+                        <input type="number" class="form__input" placeholder="Salario actual" id="salarioActual">
+                    </article>
+                    <article class="form__group form__group--column">
+                        <label for="fechaNacimiento">Fecha de Nacimiento</label>
+                        <input type="date" class="form__input" id="fechaNacimiento">
+                    </article>
+                    <article class="form__group form__group--column">
+                        <label for="coDeudor">¿Es usted Codeudor con Finca Raíz?</label>
+                        <select id="coDeudor" class="form__input form__input--select">
+                            <option value="" disabled selected>Selecciona una opción</option>
+                            <option value="true">Sí</option>
+                            <option value="false">No</option>
+                        </select>
+                    </article>
+                    <button type="submit" class="form__button">Continuar</button>
+                </form>
+            </section>
+        </article>
+
+        <article class="main__card main__card--width ocultar" id="main__prestamos">
+            <section class="header--main">
+                <h2 class="header__title">Prestamos - Contabilidad y Más</h2>
+                <p class="header__description">
+                    Hey, José Díaz estos son los préstamos que tenemos disponibles para ti.
+                </p>
+            </section>
+            <section class="prestamos__content">
+                <article class="main__card main__card--prestamos">
+                    <h1>$3.000.00</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis perspiciatis explicabo rerum, asperiores aspernatur.
+                    </p>
+                    <button class="card__button">Solicitar Préstamo</button>    
+                </article>
+
+                <article class="main__card main__card--prestamos">
+                    <h1>$6.000.00</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis perspiciatis explicabo rerum, asperiores aspernatur.
+                    </p>
+                    <button class="card__button card__button--block">No Disponible</button>    
+                </article>
+
+                
+                <article class="main__card main__card--prestamos">
+                    <h1>$1.000.00</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis perspiciatis explicabo rerum, asperiores aspernatur.
+                    </p>
+                    <button class="card__button">Solicitar Préstamo</button>    
+                </article>
+            </section>
+        </article>
+
+        
+
+        <!-- TO-DO: REALIZAR ARTICLE DE PRESTAMOS DISPONIBLES.-->
+    </main>
+    <footer class="footer"></footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
