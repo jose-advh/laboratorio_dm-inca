@@ -11,40 +11,80 @@
         <nav class="header__nav">
             <img src="imgs/logo_empresa.png" class="header__logo" alt="Logo de la empresa Contabilidad y Más">
             <ul class="header__list">
-                <li><a href="#" class="header__item" id="userName">$1.000</a></li>
+                <li><span class="header__item" id="saldo"></span></li>
                 <li><a href="#" class="header__item" id="userSaldo">CONFIG</a></li>
             </ul>
         </nav>
     </header>
     <main class="main">
-        <article class="main__card" id="main__auth">
+        <article class="main__card ocultar" id="main__auth">
             <section class="header--main">
-                <h2 class="header__title">Contabilidad y Más</h2>
-                <p class="header__description">
-                    Hey, antes de iniciar necesitamos saber un poco más de ti :)
-                </p>
+                <img src="imgs/logo_empresa.png" class="header__logo" alt="Logo de la empresa Contabilidad y Más">
+
             </section>
             <section class="auth__content">
                 <form class="form" id="fromUser">
-                    <article class="form__group">
-                        <img src="imgs/icons/person_13924070.png" alt="">
-                        <input type="text" class="form__input" placeholder="Nombre" id="nombreUsuario">
+                    <h3 class="form__title">
+                        Datos Personales
+                    </h3>
+                    <article class="form__contendor">
+                        <section class="form__column">
+                            <article class="form__group">
+                                <label for="identificacion">Identificación</label>
+                                <input type="number" class="form__input" id="identificacion" placeholder="Ingrese su identificación" required>
+                            </article>
+                            <article class="form__group">
+                                <label for="apellidos">Apellidos</label>
+                                <input type="text" class="form__input" id="apellidos" placeholder="Ingrese sus apellidos" required>
+                            </article>
+                            <article class="form__group">
+                                <label for="fechaNacimiento">Fecha de Nacimiento</label>
+                                <input type="date" class="form__input" id="fechaNacimiento" required>
+                            </article>
+                        </section>
+                        <section class="form__column">
+                            <article class="form__group">
+                                <label for="nombres">Nombres</label>
+                                <input type="text" class="form__input" id="nombre" placeholder="Ingrese sus nombres" required>
+                            </article>
+                            <article class="form__group">
+                                <label for="direccion">Dirección</label>
+                                <input type="text" class="form__input" id="direccion" placeholder="Ingrese su dirección" required>
+                            </article>
+                            <article class="form__group">
+                                <label for="telefono">Télefono</label>
+                                <input type="number" class="form__input" id="telefono" placeholder="Ingrese su número télefonico" required>
+                            </article>
+                        </section>
                     </article>
-                    <article class="form__group">
-                        <img src="imgs/icons/money_13930270.png" alt="">
-                        <input type="number" class="form__input" placeholder="Salario actual" id="salarioActual">
-                    </article>
-                    <article class="form__group form__group--column">
-                        <label for="fechaNacimiento">Fecha de Nacimiento</label>
-                        <input type="date" class="form__input" id="fechaNacimiento">
-                    </article>
-                    <article class="form__group form__group--column">
-                        <label for="coDeudor">¿Es usted Codeudor con Finca Raíz?</label>
-                        <select id="coDeudor" class="form__input form__input--select">
-                            <option value="" disabled selected>Selecciona una opción</option>
-                            <option value="true">Sí</option>
-                            <option value="false">No</option>
-                        </select>
+                    <h3 class="form__title">
+                        Datos Financieros
+                    </h3>
+                    <article class="form__contendor">
+                        <section class="form__column">
+                            <article class="form__group">
+                                <label for="coDeudor">¿Es usted Codeudor con Finca Raíz?</label>
+                                <select id="coDeudor" class="form__input form__input--select" required>
+                                    <option value="" disabled selected>Selecciona una opción</option>
+                                    <option value="true">Sí</option>
+                                    <option value="false">No</option>
+                                </select>
+                            </article>
+                            <article class="form__group">
+                                <label for="cuentaCorriente">¿Posee usted una Cuenta Corriente?</label>
+                                <select id="cuentaCorriente" class="form__input form__input--select" required>
+                                    <option value="" disabled selected>Selecciona una opción</option>
+                                    <option value="true">Sí</option>
+                                    <option value="false">No</option>
+                                </select>
+                            </article>
+                        </section>
+                        <section class="form__column">
+                            <article class="form__group">
+                                <label for="salario">Salario Actual</label>
+                                <input type="number" class="form__input" id="salario" placeholder="Ingrese su salario actual" required>
+                            </article>
+                        </section>
                     </article>
                     <button type="submit" class="form__button">Continuar</button>
                 </form>
@@ -64,7 +104,7 @@
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis perspiciatis explicabo rerum, asperiores aspernatur.
                     </p>
-                    <button class="card__button card__button--block" id="tresMillones"></button>    
+                    <button class="card__button card__button--block" id="tresMillones" disabled></button>    
                 </article>
 
                 <article class="main__card main__card--prestamos">
@@ -72,10 +112,10 @@
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis perspiciatis explicabo rerum, asperiores aspernatur.
                     </p>
-                    <button class="card__button card__button--block" id="seisMillones">No cumple los requisitos</button>    
+                    <button class="card__button card__button--block" id="seisMillones" disabled></button>    
                 </article>
                 
-                <article class="main__card main__card--prestamos" id="otro">
+                <article class="main__card main__card--prestamos" id="otro" disabled>
                     <h1>$1.000.00</h1>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis perspiciatis explicabo rerum, asperiores aspernatur.
@@ -85,6 +125,11 @@
             </section>
         </article>
 
+        <article class="main__recibo">
+            <section class="main__card">
+                <h3 class="header__title">RECIBO<h3>
+            </section>
+        </article>
         
 
         <!-- TO-DO: REALIZAR ARTICLE DE PRESTAMOS DISPONIBLES.-->

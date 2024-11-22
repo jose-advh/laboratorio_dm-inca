@@ -51,13 +51,17 @@ body{
     display: flex;
     flex-direction: column;
     margin: auto;
-    width: 35%;
+    width: 60%;
     gap: 25px;
     padding: 1rem;
     background-color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
                 0 1px 3px rgba(0, 0, 0, 0.08); 
     border-radius: 15px;
+}
+
+.main__icon {
+    width: 16px;
 }
 
 .main__card--width {
@@ -77,25 +81,63 @@ body{
 .form {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 15px;
+    margin: auto;
+}
+
+.form__title {
+    width: 100%;
+    color: blue;
+    display: flex;
+    padding: 1rem;
+    align-items: start;
+}
+
+.form__contendor {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 15px;
+}
+
+.form__column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    gap: 15px;
+    width: 50%;
 }
 
 .form__group {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     gap: 10px;
 }
 
 .form__group--column  {
+    display: flex;
     flex-direction: column;
+    justify-content: center;
+}
+
+.form__group-auto { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
 }
 
 .form__input {
     width: 90%;
+    margin: auto;
     height: 2.5rem;
     border-radius: 5px;
-    border: none;
+    border: 1px solid;
+    border-color: gainsboro;
     transition: .5s all;
     background-color: rgb(245, 241, 241);
 }
@@ -159,6 +201,14 @@ body{
     }
 
     .main__auth {
+        width: 80%;
+    }
+
+    .form__contendor {
+        flex-direction: column;
+    }
+
+    .form__column {
         width: 80%;
     }
 
