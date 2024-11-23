@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contabilidad y Más</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
     <header class="header">
@@ -12,7 +12,6 @@
             <img src="imgs/logo_empresa.png" class="header__logo" alt="Logo de la empresa Contabilidad y Más">
             <ul class="header__list">
                 <li><span class="header__item" id="saldo"></span></li>
-                <li><a href="#" class="header__item" id="userSaldo">CONFIG</a></li>
             </ul>
         </nav>
     </header>
@@ -95,14 +94,19 @@
             <section class="header--main">
                 <h2 class="header__title">Prestamos - Contabilidad y Más</h2>
                 <p class="header__description">
-                    Hey, José Díaz estos son los préstamos que tenemos disponibles para ti.
+                    Hey, estos son los préstamos que tenemos disponibles para ti.
                 </p>
             </section>
             <section class="prestamos__content">
                 <article class="main__card main__card--prestamos">
                     <h1>$3.000.00</h1>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis perspiciatis explicabo rerum, asperiores aspernatur.
+                        Para solicitar este prestamo debe tener un Sueldo
+                        Mínimo de $900.000, Edad entre 18 y 25 años, y Codeudor con Finca Raíz. 
+                    </p>
+                    <p>
+                        se le descontara el 1% del valor del préstamo
+                        más el 5% de 2 Salarios Mínimos como impuesto.
                     </p>
                     <button class="card__button card__button--block" id="tresMillones" disabled></button>    
                 </article>
@@ -110,25 +114,67 @@
                 <article class="main__card main__card--prestamos">
                     <h1>$6.000.00</h1>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis perspiciatis explicabo rerum, asperiores aspernatur.
+                        Para solicitar este prestamo debe tener un Salario
+                        Mínimo de $1.900.000, Edad entre 26 y 40 años, Codeudor con Finca Raíz y tener Cuenta
+                        Corriente.
+                    </p>
+                    <p>
+                        se le descontara 2% del valor del préstamo más el
+                        5% de un Salario y medio mínimo como impuesto.
                     </p>
                     <button class="card__button card__button--block" id="seisMillones" disabled></button>    
                 </article>
                 
                 <article class="main__card main__card--prestamos" id="otro" disabled>
-                    <h1>$1.000.00</h1>
+                    <h1>$1.500.00</h1>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis perspiciatis explicabo rerum, asperiores aspernatur.
+                        Puede solicitar este prestamo si no cumple los requisitos de los dos prestamos anteriores (3 y 6 Millones).
+                    </p>
+                    <p>
+                        se le descontará el 0.5 % del valor del préstamo como impuesto.
                     </p>
                     <button class="card__button card__button--block">No cumple los requisitos</button>    
                 </article>
             </section>
         </article>
 
-        <article class="main__recibo ocultar">
-            <section class="main__card">
-                <h3 class="header__title">RECIBO<h3>
-                
+        <article class="modal ocultar" id="confirmarPrestamo">
+            <section class="modal__header">
+                <h2>¿Está seguro?</h2>
+                <hr>
+            </section>
+            <section class="modal__description">
+                <p>
+                    Está solicitando un prestamo de x millones
+                    por favor, confirme si quiere realizar esta acción
+                </p>
+            </section>
+            <section class="modal__buttons">
+                <button id="modalCancelar" class="button__modal">Cancelar</button>
+                <button id="modalConfirmar" class="button__modal button__modal--outline">Confirmar</button>
+            </section>
+        </article>
+
+        <article class="modal main__recibo ocultar" id="abrirRecibo">
+            <section class="modal__header">
+                <h2>PRÉSTAMO REALIZADO</h2>
+                <hr>
+            </section>
+            <section class="modal__description">
+                <p>
+                    Todo ha ido bien, el dinero se ha reflejado en su saldo.
+                    ¡Gracias por confiar en nosotros!
+                </p>
+                <hr>
+                <article class="datos_usuario">
+                    <ul class="group">
+                        <li>ID: <span id="reciboId"></span></li>
+                        <li>Nombre: <span id="reciboNombre"></span></li>
+                        <li>Préstamo <span style="color: green;" id="reciboPrestamo"></span></li>
+                        <li>Fecha: <span id="reciboFecha"></span></li>
+                    </ul>
+                </article>
+                <button id="reciboCerrar" class="button__modal">Cerrar</button>
             </section>
         </article>
         

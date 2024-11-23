@@ -19,6 +19,12 @@ body{
 
 }
 
+.main {
+    display: flex;
+    gap: 28px;
+    flex-direction: column;
+}
+
 .header--main {
     display: flex;
     flex-direction: column;
@@ -188,6 +194,59 @@ body{
     background-color: rgb(75, 75, 255);
 }
 
+.modal {
+    display: flex;
+    position: fixed;
+    top: 30%;
+    right: 38%;
+    flex-direction: column;
+    gap: 15px;
+    width: 25%;
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.08); 
+}
+
+.modal__abierto {
+    filter: blur(2px) !important;
+}
+
+.modal__header {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.modal__description {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.button__modal {
+    padding: .5rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: red;
+    color: white;
+    transition: .5s all ease;
+}
+
+.button__modal--outline {
+    color: black;
+    background-color: transparent !important;
+    border: 1.5px solid;
+    border-color: rgb(70, 243, 70);
+}
+
+.button__modal:hover {
+    background-color: rgb(69, 97, 255) !important;
+    border: none;
+}
+
 @media (max-width: 900px) {
 
     .header {
@@ -226,5 +285,10 @@ body{
 
     .main__card--prestamos {
         width: 90% !important;
+    }
+
+    .modal {
+        width: 90%;
+        right: 5%;
     }
 }
