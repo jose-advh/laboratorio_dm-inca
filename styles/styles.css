@@ -15,12 +15,9 @@ body{
     background-color: #F5F5F5;
 }
 
-.header {
-
-}
-
 .main {
     display: flex;
+    padding: .5rem;
     gap: 28px;
     flex-direction: column;
 }

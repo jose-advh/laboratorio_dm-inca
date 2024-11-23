@@ -23,3 +23,6 @@ Corriente.
 mil pesos y se le descontará el 0.5 % del valor del préstamo como impuesto.
 Elabore una WebApp que permita determinar el tipo de préstamo que se le podrá dar al trabajador
 y cuáles serán los descuentos que se le realizarán, de acuerdo con los requisitos que presente.
+
+Elabore una WebApp que permita determinar el tipo de préstamo que se le podrá dar al trabajador
+y cuáles serán los descuentos que se le realizarán, de acuerdo con los requisitos que presente.

@@ -28,7 +28,8 @@ document.getElementById('fromUser').addEventListener('submit', function(event) {
 
     const prestamos = {
         botonTresMillones:  document.getElementById('tresMillones'),
-        botonSeisMillones: document.getElementById('seisMillones')
+        botonSeisMillones: document.getElementById('seisMillones'),
+        botonMillonQuinientos: document.getElementById('millonQuinientos')
     }
 
     const modal = {
@@ -62,7 +63,7 @@ document.getElementById('fromUser').addEventListener('submit', function(event) {
         prestamos.botonSeisMillones.innerText = 'No cumple los requisitos'
 
         switch(true) {
-            case (usuario.salario >= 900000 && usuario.edad >= 18 && usuario.edad <= 25 && usuario.coDeudor):
+            case (usuario.salario >= 900000 && usuario.edad <= 25 && usuario.coDeudor):
                 prestamos.botonTresMillones.classList.remove('card__button--block');
                 prestamos.botonTresMillones.innerText = 'Solicitar Préstamo';
                 prestamos.botonTresMillones.disabled = false;
@@ -128,6 +129,36 @@ document.getElementById('fromUser').addEventListener('submit', function(event) {
 
             default: 
 
+                prestamos.botonMillonQuinientos.classList.remove('card__button--block');
+                prestamos.botonMillonQuinientos.innerText = 'Solicitar Préstamo';
+                prestamos.botonMillonQuinientos.disabled = false;
+
+                prestamos.botonMillonQuinientos.addEventListener('click', () => {
+                    modal.abrir.classList.remove('ocultar');
+                    seccion.prestamos.classList.add('modal__abierto');
+
+                    modal.confirmar.addEventListener('click', () => {
+                        modal.abrir.classList.add('ocultar');
+                        recibo.abrir.classList.remove('ocultar');
+
+                        recibo.cerrar.addEventListener('click', () => {
+                            recibo.abrir.classList.add('ocultar');
+                            seccion.prestamos.classList.remove('modal__abierto');
+                        });
+                        
+                        prestamoMillonQuinientos();
+                        recibo.id.innerText = usuario.identificacion;
+                        recibo.nombre.innerText = usuario.nombre;
+                        recibo.prestamo.innerText = prestamo;
+                        recibo.fecha.innerText = new Date();
+                    });
+
+                    modal.cancelar.addEventListener('click', () => {
+                        modal.abrir.classList.add('ocultar');
+                        seccion.prestamos.classList.remove('modal__abierto');
+                    });
+                });
+
         }
 
     } else {
@@ -142,27 +173,24 @@ function calcularDescuento(prestamo, porcentajePrestamo, porcentajeSalario) {
 }
 
 function prestamoTresMillones(sueldoTrabajador, edad, codeudorFincaRaiz) {
-    if (sueldoTrabajador >= 900000 && edad >= 18 && edad <= 25 && codeudorFincaRaiz) {
         prestamo = 3000000; 
         descuentoImpuesto = calcularDescuento(prestamo, 0.01, 0.05);
         saldoActual += (prestamo - descuentoImpuesto);
         saldo.innerText = saldoActual;
-        console.log(`El prestamo se realizó con éxito, su saldo actual es de: ${saldoActual.toFixed(2)} ¡Gracias por confiar en nosotros!`);
-    } else {
-        console.log('Usted no cumple con los requisitos para solicitar este prestamo.');
-    }
 }
 
 function prestamoSeisMillones(sueldoTrabajador, edad, codeudorFincaRaiz, cuentaCorriente) {
-    if (sueldoTrabajador >= 1900000 && edad >= 26 && edad <= 40 && codeudorFincaRaiz && cuentaCorriente) {
         prestamo = 6000000;
         descuentoImpuesto = calcularDescuento(prestamo, 0.02, 0.05);
         saldoActual += (prestamo - descuentoImpuesto);
         saldo.innerText = saldoActual;
-        console.log(`El prestamo se realizó con éxito, su saldo actual es de: ${saldoActual.toFixed(2)} ¡Gracias por confiar en nosotros!`);
-    } else {
-        console.log('Usted no cumple con los requisitos para solicitar este prestamo.');
-    }
+}
+
+function prestamoMillonQuinientos() {
+    prestamo = 1500000;
+    descuentoImpuesto = calcularDescuento(prestamo, 0.005, 0);
+    saldoActual += (prestamo - descuentoImpuesto);
+    saldo.innerText = saldoActual;
 }
 
     // console.log(`La identificación del usuario es: ${usuario.identificacion}`);

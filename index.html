@@ -9,7 +9,7 @@
 <body>
     <header class="header">
         <nav class="header__nav">
-            <img src="imgs/logo_empresa.png" class="header__logo" alt="Logo de la empresa Contabilidad y Más">
+            <a href="index.html"><img src="imgs/logo_empresa.png" class="header__logo" alt="Logo de la empresa Contabilidad y Más"></a>
             <ul class="header__list">
                 <li><span class="header__item" id="saldo"></span></li>
             </ul>
@@ -18,8 +18,7 @@
     <main class="main">
         <article class="main__card" id="main__auth">
             <section class="header--main">
-                <img src="imgs/logo_empresa.png" class="header__logo" alt="Logo de la empresa Contabilidad y Más">
-
+                <h2>Contabilidad y más</h2>
             </section>
             <section class="auth__content">
                 <form class="form" id="fromUser">
@@ -125,7 +124,7 @@
                     <button class="card__button card__button--block" id="seisMillones" disabled></button>    
                 </article>
                 
-                <article class="main__card main__card--prestamos" id="otro" disabled>
+                <article class="main__card main__card--prestamos" disabled>
                     <h1>$1.500.00</h1>
                     <p>
                         Puede solicitar este prestamo si no cumple los requisitos de los dos prestamos anteriores (3 y 6 Millones).
@@ -133,7 +132,7 @@
                     <p>
                         se le descontará el 0.5 % del valor del préstamo como impuesto.
                     </p>
-                    <button class="card__button card__button--block">No cumple los requisitos</button>    
+                    <button class="card__button card__button--block" id="millonQuinientos" disabled>No cumple los requisitos</button>    
                 </article>
             </section>
         </article>
@@ -177,12 +176,8 @@
                 <button id="reciboCerrar" class="button__modal">Cerrar</button>
             </section>
         </article>
-        
 
-        <!-- TO-DO: REALIZAR ARTICLE DE PRESTAMOS DISPONIBLES.-->
     </main>
-    <footer class="footer"></footer>
-
     <script src="js/app.js"></script>
 </body>
 </html>
