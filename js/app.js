@@ -35,7 +35,8 @@ document.getElementById('fromUser').addEventListener('submit', function(event) {
     const modal = {
         abrir: document.getElementById('confirmarPrestamo'),
         confirmar: document.getElementById('modalConfirmar'),
-        cancelar: modalCancelar = document.getElementById('modalCancelar')
+        cancelar: document.getElementById('modalCancelar'),
+        cantidad: document.getElementById('modalCantidad')
     }
 
     const recibo = {
